@@ -3,6 +3,8 @@ public class Book {
 	/*
 	 * This class represents a Book object
 	 */
+
+	// Attributes
 	private String bookName;
 	private String authorName;
 	private String ISBN;
