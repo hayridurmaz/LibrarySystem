@@ -12,7 +12,7 @@ public class LibDriver {
 			System.out.println("Press D to delete a book");
 			System.out.println("Press X to display all books");
 			System.out.println("Press Q to exit");
-			System.out.println("Your choice: ");
+			System.out.print("Your choice: ");
 			String input = scan.nextLine();
 
 			if (input.trim().charAt(0) == 'A') {
@@ -42,7 +42,7 @@ public class LibDriver {
 					System.err.println("Cannot delete");
 				}
 			} else if (input.trim().charAt(0) == 'X') {
-				System.out.println(library.getTotalNumberofBooks());
+				System.out.println(library.getTotalNumberofBooks() + " Books:");
 				library.printAllBooks();
 			} else if (input.trim().charAt(0) == 'Q') {
 				System.out.println("Good Bye...");

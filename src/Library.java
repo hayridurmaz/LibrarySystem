@@ -43,7 +43,7 @@ public class Library {
 			System.err.println("Author name is not valid");
 			return false;
 		}
-		if (ISBN.length() < 13 || ISBN.length()>14) {
+		if (ISBN.length() < 13 || ISBN.length() > 14) {
 			System.err.println("ISBN is not valid.");
 			return false;
 		}
@@ -122,8 +122,9 @@ public class Library {
 
 	public boolean deleteBook(String isbn) {
 		// Delete a book from library
+
 		for (int i = 0; i < Books.size(); i++) {
-			if (Books.get(i).getISBN().equals(isbn)) {
+			if (Books.get(i).getISBN().trim().equals(isbn)) {
 				Books.remove(i);
 				return true;
 			}
