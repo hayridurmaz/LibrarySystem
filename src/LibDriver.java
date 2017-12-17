@@ -23,8 +23,7 @@ public class LibDriver {
 					if (library.addBook(splited[0], splited[1], splited[2], Integer.parseInt(splited[3].trim()),
 							Integer.parseInt(splited[4].trim()), keys)) {
 						System.out.println("Added.");
-					}
-					else{
+					} else {
 						System.err.println("Could not added.");
 					}
 				} catch (Exception e) {
