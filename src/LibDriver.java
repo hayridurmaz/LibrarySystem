@@ -1,7 +1,9 @@
 import java.util.Scanner;
 
 public class LibDriver {
+	// Class with main method.
 	public static void main(String[] args) {
+		// Driver method
 		Scanner scan = new Scanner(System.in);
 		Library library = new Library();
 

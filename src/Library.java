@@ -1,6 +1,9 @@
 import java.util.*;
 
 public class Library {
+	/*
+	 * This class represents a Library object
+	 */
 	private List<Book> Books;
 	private int totalNumberofBooks;
 
@@ -10,6 +13,8 @@ public class Library {
 		totalNumberofBooks = 0;
 
 	}
+
+	// GETTERS AND SETTERS
 
 	public List<Book> getBooks() {
 		return Books;
@@ -29,6 +34,7 @@ public class Library {
 
 	public boolean addBook(String bookName, String authorName, String ISBN, int numPages, int pubYear,
 			String[] keyWords) {
+		// This is method to create a book with valid info and add it to library
 		if (bookName.length() < 2) {
 			System.err.println(bookName.length());
 			return false;
@@ -60,6 +66,7 @@ public class Library {
 	}
 
 	public Book[] returnBook(String bookName) {
+		// This method returns book(s) by Name
 		ArrayList<Book> temp = new ArrayList<>();
 		for (Book book : Books) {
 			if (book.getBookName().equals(bookName)) {
@@ -75,6 +82,7 @@ public class Library {
 	}
 
 	public Book[] returnBookByAuthor(String authorName) {
+		// This method returns book(s) by Author Name
 		ArrayList<Book> temp = new ArrayList<>();
 		for (Book book : Books) {
 			if (book.getAuthorName().equals(authorName)) {
@@ -90,6 +98,7 @@ public class Library {
 	}
 
 	public Book[] returnBookByKeyword(String keyword) {
+		// This method returns book(s) by key words.
 		ArrayList<Book> temp = new ArrayList<>();
 		for (Book book : Books) {
 			if (book.searchKeyWord(keyword)) {
@@ -105,12 +114,14 @@ public class Library {
 	}
 
 	public void printAllBooks() {
+		// Display each books in library
 		for (Book book : Books) {
 			book.displayBook();
 		}
 	}
 
 	public boolean deleteBook(String isbn) {
+		// Delete a book from library
 		for (int i = 0; i < Books.size(); i++) {
 			if (Books.get(i).getISBN().equals(isbn)) {
 				Books.remove(i);
