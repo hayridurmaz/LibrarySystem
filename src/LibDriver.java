@@ -13,7 +13,24 @@ public class LibDriver {
 			String input = scan.nextLine();
 
 			if (input.trim().charAt(0) == 'A') {
-
+				String[] splited = input.substring(1).trim().split(",");
+				String[] keys = new String[splited.length - 5];
+				int j = 0;
+				for (int i = 5; i < splited.length; i++) {
+					keys[j] = splited[i];
+				}
+				try {
+					if (library.addBook(splited[0], splited[1], splited[2], Integer.parseInt(splited[3].trim()),
+							Integer.parseInt(splited[4].trim()), keys)) {
+						System.out.println("Added.");
+					}
+					else{
+						System.err.println("Could not added.");
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+					System.err.println("Some exception happened, cannot add book.");
+				}
 			} else if (input.trim().charAt(0) == 'D') {
 				String bookIsbn = input.substring(1).trim();
 				if (library.deleteBook(bookIsbn)) {
@@ -22,6 +39,7 @@ public class LibDriver {
 					System.err.println("Cannot delete");
 				}
 			} else if (input.trim().charAt(0) == 'X') {
+				System.out.println(library.getTotalNumberofBooks());
 				library.printAllBooks();
 			} else if (input.trim().charAt(0) == 'Q') {
 				System.out.println("Good Bye...");

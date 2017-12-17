@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Library {
 	private List<Book> Books;
-	int totalNumberofBooks;
+	private int totalNumberofBooks;
 
 	public Library() {
 		// Constructor without arguments
@@ -30,21 +30,27 @@ public class Library {
 	public boolean addBook(String bookName, String authorName, String ISBN, int numPages, int pubYear,
 			String[] keyWords) {
 		if (bookName.length() < 2) {
+			System.err.println(bookName.length());
 			return false;
 		}
 		if (authorName.length() < 3) {
+			System.err.println(authorName.length());
 			return false;
 		}
-		if (ISBN.length() != 1) {
+		if (ISBN.length() != 13) {
+			System.err.println(ISBN.length());
 			return false;
 		}
 		if (numPages < 0) {
+			System.err.println(numPages);
 			return false;
 		}
 		if (pubYear < 1923 || pubYear > 2016) {
+			System.err.println(pubYear);
 			return false;
 		}
 		if (keyWords.length < 3 || keyWords.length > 5) {
+			System.err.println(keyWords.length);
 			return false;
 		}
 		Book book = new Book(bookName, authorName, ISBN, numPages, pubYear, keyWords);
