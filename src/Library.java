@@ -36,27 +36,27 @@ public class Library {
 			String[] keyWords) {
 		// This is method to create a book with valid info and add it to library
 		if (bookName.length() < 2) {
-			System.err.println(bookName.length());
+			System.err.println("Book name is not valid.");
 			return false;
 		}
 		if (authorName.length() < 3) {
-			System.err.println(authorName.length());
+			System.err.println("Author name is not valid");
 			return false;
 		}
-		if (ISBN.length() != 13) {
-			System.err.println(ISBN.length());
+		if (ISBN.length() < 13 || ISBN.length()>14) {
+			System.err.println("ISBN is not valid.");
 			return false;
 		}
 		if (numPages < 0) {
-			System.err.println(numPages);
+			System.err.println("Page number is not valid.");
 			return false;
 		}
 		if (pubYear < 1923 || pubYear > 2016) {
-			System.err.println(pubYear);
+			System.err.println("Publication year is not valid.");
 			return false;
 		}
 		if (keyWords.length < 3 || keyWords.length > 5) {
-			System.err.println(keyWords.length);
+			System.err.println("Key words are not valid.");
 			return false;
 		}
 		Book book = new Book(bookName, authorName, ISBN, numPages, pubYear, keyWords);

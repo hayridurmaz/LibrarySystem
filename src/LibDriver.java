@@ -12,6 +12,7 @@ public class LibDriver {
 			System.out.println("Press D to delete a book");
 			System.out.println("Press X to display all books");
 			System.out.println("Press Q to exit");
+			System.out.println("Your choice: ");
 			String input = scan.nextLine();
 
 			if (input.trim().charAt(0) == 'A') {
@@ -20,6 +21,7 @@ public class LibDriver {
 				int j = 0;
 				for (int i = 5; i < splited.length; i++) {
 					keys[j] = splited[i];
+					j++;
 				}
 				try {
 					if (library.addBook(splited[0], splited[1], splited[2], Integer.parseInt(splited[3].trim()),
