@@ -11,6 +11,8 @@ public class LibDriver {
 			System.out.println("Press A to insert a book");
 			System.out.println("Press D to delete a book");
 			System.out.println("Press X to display all books");
+			System.out.println("Press L to display books of an author");
+			System.out.println("Press M to display books with a keyword");
 			System.out.println("Press Q to exit");
 			System.out.print("Your choice: ");
 			String input = scan.nextLine();
@@ -20,7 +22,7 @@ public class LibDriver {
 				String[] keys = new String[splited.length - 5];
 				int j = 0;
 				for (int i = 5; i < splited.length; i++) {
-					keys[j] = splited[i];
+					keys[j] = splited[i].trim();
 					j++;
 				}
 				try {
@@ -47,6 +49,12 @@ public class LibDriver {
 			} else if (input.trim().charAt(0) == 'Q') {
 				System.out.println("Good Bye...");
 				break;
+			} else if (input.trim().charAt(0) == 'L') {
+				String author = input.substring(1).trim();
+				Library.printBookArray(library.returnBookByAuthor(author));
+			} else if (input.trim().charAt(0) == 'M') {
+				String key = input.substring(1).trim();
+				Library.printBookArray(library.returnBookByKeyword(key));
 			} else {
 				System.err.println("Wrong input");
 			}

@@ -85,7 +85,7 @@ public class Library {
 		// This method returns book(s) by Author Name
 		ArrayList<Book> temp = new ArrayList<>();
 		for (Book book : Books) {
-			if (book.getAuthorName().equals(authorName)) {
+			if (book.getAuthorName().contains(authorName)) {
 				temp.add(book);
 			}
 		}
@@ -130,6 +130,11 @@ public class Library {
 			}
 		}
 		return false;
+	}
+	public static void printBookArray(Book[] bookArray){
+		for (int i = 0; i < bookArray.length; i++) {
+			bookArray[i].displayBook();
+		}
 	}
 
 }
