@@ -126,12 +126,14 @@ public class Library {
 		for (int i = 0; i < Books.size(); i++) {
 			if (Books.get(i).getISBN().trim().equals(isbn)) {
 				Books.remove(i);
+				totalNumberofBooks--;
 				return true;
 			}
 		}
 		return false;
 	}
-	public static void printBookArray(Book[] bookArray){
+
+	public static void printBookArray(Book[] bookArray) {
 		for (int i = 0; i < bookArray.length; i++) {
 			bookArray[i].displayBook();
 		}

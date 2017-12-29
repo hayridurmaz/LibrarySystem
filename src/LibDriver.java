@@ -26,8 +26,8 @@ public class LibDriver {
 					j++;
 				}
 				try {
-					if (library.addBook(splited[0], splited[1], splited[2], Integer.parseInt(splited[3].trim()),
-							Integer.parseInt(splited[4].trim()), keys)) {
+					if (library.addBook(splited[0].trim(), splited[1].trim(), splited[2].trim(),
+							Integer.parseInt(splited[3].trim()), Integer.parseInt(splited[4].trim()), keys)) {
 						System.out.println("Added.");
 					} else {
 						System.err.println("Could not added.");
@@ -44,7 +44,8 @@ public class LibDriver {
 					System.err.println("Cannot delete");
 				}
 			} else if (input.trim().charAt(0) == 'X') {
-				System.out.println(library.getTotalNumberofBooks() + " Books:");
+				// System.out.println(library.getTotalNumberofBooks() + "
+				// Books:");
 				library.printAllBooks();
 			} else if (input.trim().charAt(0) == 'Q') {
 				System.out.println("Good Bye...");
