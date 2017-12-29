@@ -43,7 +43,7 @@ public class Library {
 			System.err.println("Author name is not valid");
 			return false;
 		}
-		if (ISBN.length() < 13 || ISBN.length() > 14) {
+		if (ISBN.length() != 13) {
 			System.err.println("ISBN is not valid.");
 			return false;
 		}
